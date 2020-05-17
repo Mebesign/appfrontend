@@ -42,11 +42,8 @@ export default {
   },
   mounted() {
   axios
-    .get(`${process.env.VUE_APP_ROOT_API}/proposals/`)
+    .get(`http://localhost:3000/proposals/`)
     .then(response => (this.proposals = response.data.proposal))
-    /* eslint no-console: "off" */
-    console.log(process.env.VUE_APP_ROOT_API)
-    /* eslint no-console: "off" */
   },
   methods: {
     remove(index, key) {
