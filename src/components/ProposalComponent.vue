@@ -23,6 +23,7 @@
 
 import axios from 'axios'
 
+
 export default {
   name: 'ProposalComponent',
   data() {
@@ -41,8 +42,11 @@ export default {
   },
   mounted() {
   axios
-    .get(`http://localhost:3000/proposals/`)
+    .get(`${process.env.VUE_APP_ROOT_API}/proposals/`)
     .then(response => (this.proposals = response.data.proposal))
+    /* eslint no-console: "off" */
+    console.log(process.env.VUE_APP_ROOT_API)
+    /* eslint no-console: "off" */
   },
   methods: {
     remove(index, key) {

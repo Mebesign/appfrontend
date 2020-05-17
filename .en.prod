@@ -1,0 +1,1 @@
+VUE_APP_ROOT_API = 'http://appnodejs.mebdesign.fr:3000'
