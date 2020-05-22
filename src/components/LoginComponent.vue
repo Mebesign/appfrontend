@@ -71,7 +71,7 @@ export default {
     },
     methods: {
         login() {
-            axios.post(`http://localhost:3000/users/login/`, {
+            axios.post(`${process.env.VUE_APP_URL}/users/login/`, {
                 email: this.email,
                 password: this.password
             })
@@ -90,7 +90,7 @@ export default {
         },
         emitMethod(){
             EventBus.$emit('logged-in', 'loggedin')
-            this.router.push('http://localhost:3000/users/profile')
+            this.router.push('${process.env.VUE_APP_URL}/users/profile')
         },
         validate () {
             if (this.$refs.form.validate()) {

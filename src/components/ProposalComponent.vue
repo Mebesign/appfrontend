@@ -41,14 +41,18 @@ export default {
     }
   },
   mounted() {
+    /* eslint no-console: "off" */
+    console.log(process.env.VUE_APP_URL)
+    console.log(process.env.VUE_APP_TITLE)
+    /* eslint no-console: "off" */
   axios
-    .get(`http://localhost:3000/proposals/`)
+    .get(`${process.env.VUE_APP_URL}/proposals/`)
     .then(response => (this.proposals = response.data.proposal))
   },
   methods: {
     remove(index, key) {
       axios
-      .delete(`http://localhost:3000/proposals/${key}`)
+      .delete(`${process.env.VUE_APP_URL}/proposals/${key}`)
       .then(this.proposals.splice(index, 1))
     }
   }

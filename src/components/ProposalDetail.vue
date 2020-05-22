@@ -58,7 +58,7 @@ export default {
 
   mounted() {
   axios
-    .get(`http://localhost:3000/proposals/${this.$route.params.id}`)
+    .get(`${process.env.VUE_APP_URL}/proposals/${this.$route.params.id}`)
     .then(response => (this.proposals = response.data.proposal))
   }
 }

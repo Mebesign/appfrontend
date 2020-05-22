@@ -208,7 +208,7 @@ import axios from 'axios'
         /* eslint no-console: "off" */
         console.log(currentObj)
         /* eslint no-console: "off" */
-        axios.post(`http://localhost:3000/proposals/`, {
+        axios.post(`${process.env.VUE_APP_URL}/proposals/`, {
             t_firstname: this.t_firstname,
             t_lastname: this.t_lastname,
             t_email: this.t_email,
@@ -227,7 +227,7 @@ import axios from 'axios'
       },
       getProposal () {
         axios
-        .get(`http://localhost:3000/proposals/${this.$route.params.id}`)
+        .get(`${process.env.VUE_APP_URL}/proposals/${this.$route.params.id}`)
         .then(response => (this.proposals = response.data.proposal))
       },
       updateProposal () {
@@ -236,7 +236,7 @@ import axios from 'axios'
         console.log(currentObj)
         /* eslint no-console: "off" */
 
-        axios.put(`http://localhost:3000/proposals/${this.$route.params.id}`,{
+        axios.put(`${process.env.VUE_APP_URL}/proposals/${this.$route.params.id}`,{
             t_firstname: currentObj.t_firstname,
             t_lastname: currentObj.t_lastname,
             t_email: currentObj.t_email,
