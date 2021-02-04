@@ -3,29 +3,45 @@
 
         <form v-on:submit.prevent="register">
             <h1>Register</h1>
+            <v-container>
+                <v-row>
+                <v-col
+                cols="12"
+                md="6"
+                >
+                <v-text-field
+                v-model="first_name"
+                label="Last name"
+                placeholder='Saisissez votre first name'
+                required
+                ></v-text-field>
 
+                <v-text-field
+                v-model="last_name"
+                label="Last name"
+                placeholder='Saisissez votre last name'
+                required
+                ></v-text-field>
 
-            <label for="first_name">first name</label>
-            <input type="text"
-            v-model="first_name"
-            placeholder='Saisissez votre first name'
-            >
-            <label for="last_name">Last name</label>
-            <input type="text"
-            v-model="last_name"
-            placeholder='Saisissez votre last name'
-            >
-            <label for="email">email</label>
-            <input type="email"
-            v-model="email"
-            placeholder='Saisissez votre email'
-            >
-            <label for="password">Passwd</label>
-            <input type="password"
-            v-model="password"
-            placeholder='Saisissez votre pass'
-            >
-            <button type="submit">Register</button>
+                <v-text-field
+                v-model="email"
+                label="Email"
+                type="email"
+                placeholder='Saisissez votre email'
+                required
+                ></v-text-field>
+
+                <v-text-field
+                v-model="password"
+                label="Password"
+                type="password"
+                placeholder='Saisissez votre password'
+                required
+                ></v-text-field>
+                </v-col>
+                </v-row>
+                <button type="submit">Register</button>
+            </v-container>
         </form>
 
     </div>
@@ -58,8 +74,7 @@ export default {
                 this.first_name='',
                 this.last_name='',
                 this.email='',
-                this.password='',
-                this.router.push('/login')
+                this.password=''
             })
             .catch(err => {
                 /* eslint no-console: "off" */
